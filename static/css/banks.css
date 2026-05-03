@@ -1,0 +1,241 @@
+/* ==================== 题库管理页面样式 ==================== */
+.banks-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+}
+
+.bank-card {
+    position: relative;
+    cursor: pointer;
+}
+
+.bank-card-type {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+}
+
+.bank-card-content {
+    padding-top: 8px;
+}
+
+.bank-card-title {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    padding-right: 80px;
+}
+
+.bank-card-desc {
+    font-size: 14px;
+    color: var(--text-secondary);
+    margin-bottom: 16px;
+    min-height: 40px;
+}
+
+.bank-card-stats {
+    display: flex;
+    gap: 16px;
+    font-size: 13px;
+    color: var(--text-secondary);
+}
+
+.bank-card-stat {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.bank-card-actions {
+    display: flex;
+    gap: 8px;
+    margin-top: 16px;
+    padding-top: 16px;
+    border-top: 1px solid var(--border);
+}
+
+/* ==================== 题库详情 ==================== */
+.bank-detail-header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 24px;
+}
+
+.bank-detail-header h1 {
+    flex: 1;
+}
+
+.bank-info-card {
+    background: var(--surface);
+    border-radius: var(--radius);
+    padding: 24px;
+    margin-bottom: 24px;
+    border: 1px solid var(--border);
+}
+
+.bank-info-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 16px;
+}
+
+.bank-info-title {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.bank-info-meta {
+    display: flex;
+    gap: 24px;
+    font-size: 14px;
+    color: var(--text-secondary);
+}
+
+.bank-info-meta span {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+/* ==================== 题目列表 ==================== */
+.questions-list {
+    background: var(--surface);
+    border-radius: var(--radius);
+    border: 1px solid var(--border);
+    overflow: hidden;
+}
+
+.question-item {
+    padding: 20px 24px;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 16px;
+}
+
+.question-item:last-child {
+    border-bottom: none;
+}
+
+.question-item-content {
+    flex: 1;
+}
+
+.question-item-number {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    background: var(--primary-light);
+    color: var(--primary);
+    border-radius: 50%;
+    font-size: 13px;
+    font-weight: 600;
+    margin-right: 12px;
+}
+
+.question-item-text {
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+.question-item-preview {
+    font-size: 13px;
+    color: var(--text-secondary);
+    margin-top: 8px;
+    padding-left: 40px;
+}
+
+.question-item-actions {
+    display: flex;
+    gap: 8px;
+}
+
+/* ==================== 题目表单 ==================== */
+.question-form-type {
+    background: var(--bg);
+    padding: 16px;
+    border-radius: var(--radius-sm);
+    margin-bottom: 20px;
+}
+
+.question-form-type label {
+    font-weight: 600;
+    margin-bottom: 8px;
+    display: block;
+}
+
+.form-hint {
+    font-size: 13px;
+    color: var(--text-secondary);
+    margin-top: 4px;
+}
+
+.form-hint code {
+    background: var(--surface);
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-family: monospace;
+}
+
+/* ==================== 同义词对 ==================== */
+.synonym-pairs {
+    margin-top: 16px;
+}
+
+.synonym-pair {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 12px;
+    padding: 12px;
+    background: var(--bg);
+    border-radius: var(--radius-sm);
+}
+
+.synonym-pair input {
+    flex: 1;
+}
+
+.synonym-pair-arrow {
+    color: var(--text-secondary);
+    font-size: 18px;
+}
+
+.synonym-pair-remove {
+    background: none;
+    border: none;
+    color: var(--danger);
+    cursor: pointer;
+    font-size: 18px;
+    padding: 4px;
+}
+
+/* ==================== 填空题目 ==================== */
+.fillblank-preview {
+    background: var(--bg);
+    padding: 16px;
+    border-radius: var(--radius-sm);
+    margin-top: 12px;
+    font-family: monospace;
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+.fillblank-blank {
+    display: inline-block;
+    min-width: 80px;
+    padding: 2px 8px;
+    background: var(--primary-light);
+    border: 1px dashed var(--primary);
+    border-radius: 4px;
+    color: var(--primary);
+    text-align: center;
+    margin: 0 4px;
+}

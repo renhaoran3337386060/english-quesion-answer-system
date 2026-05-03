@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>学习统计 - 英语练习工具</title>
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/stats.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app">
+        <!-- 左侧导航 -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <span class="logo-icon">📚</span>
+                    <span class="logo-text">英语练习</span>
+                </div>
+            </div>
+            
+            <nav class="sidebar-nav">
+                <a href="index.html" class="nav-item">
+                    <span class="nav-icon">🏠</span>
+                    <span>首页</span>
+                </a>
+                <a href="banks.html" class="nav-item">
+                    <span class="nav-icon">📁</span>
+                    <span>题库管理</span>
+                </a>
+                <a href="practice.html" class="nav-item">
+                    <span class="nav-icon">✏️</span>
+                    <span>开始练习</span>
+                </a>
+                <a href="records.html" class="nav-item">
+                    <span class="nav-icon">📊</span>
+                    <span>练习记录</span>
+                </a>
+                <a href="stats.html" class="nav-item active">
+                    <span class="nav-icon">📈</span>
+                    <span>学习统计</span>
+                </a>
+            </nav>
+        </aside>
+
+        <!-- 主内容区 -->
+        <main class="main-content">
+            <div class="page-header">
+                <h1>学习统计</h1>
+            </div>
+            
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon">📝</div>
+                    <div class="stat-value" id="stat-total">0</div>
+                    <div class="stat-label">总练习次数</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">📁</div>
+                    <div class="stat-value" id="stat-banks">0</div>
+                    <div class="stat-label">题库数量</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">❓</div>
+                    <div class="stat-value" id="stat-questions">0</div>
+                    <div class="stat-label">题目总数</div>
+                </div>
+            </div>
+            
+            <div class="stats-detail">
+                <div class="chart-container">
+                    <h3>各题型练习分布</h3>
+                    <div id="type-chart" class="type-chart">
+                        <!-- 图表动态加载 -->
+                    </div>
+                </div>
+                
+                <div class="recent-activity">
+                    <h3>最近练习</h3>
+                    <div id="recent-activity" class="activity-list">
+                        <!-- 活动列表动态加载 -->
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="js/common.js"></script>
+    <script src="js/stats.js"></script>
+</body>
+</html>

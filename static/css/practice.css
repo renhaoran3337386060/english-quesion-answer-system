@@ -1,0 +1,364 @@
+/* ==================== 练习页面样式 ==================== */
+.practice-select {
+    max-width: 800px;
+}
+
+.practice-select h3 {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.practice-banks {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 16px;
+}
+
+.practice-bank-card {
+    background: var(--surface);
+    border-radius: var(--radius);
+    padding: 20px;
+    border: 2px solid var(--border);
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.practice-bank-card:hover {
+    border-color: var(--primary);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow);
+}
+
+.practice-bank-card.selected {
+    border-color: var(--primary);
+    background: var(--primary-light);
+}
+
+.practice-bank-name {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.practice-bank-info {
+    font-size: 13px;
+    color: var(--text-secondary);
+}
+
+/* ==================== 练习区域 ==================== */
+.practice-container {
+    max-width: 900px;
+}
+
+.practice-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--border);
+}
+
+.practice-progress {
+    font-size: 14px;
+    color: var(--text-secondary);
+}
+
+.practice-progress-bar {
+    width: 200px;
+    height: 6px;
+    background: var(--border);
+    border-radius: 3px;
+    margin-top: 8px;
+    overflow: hidden;
+}
+
+.practice-progress-fill {
+    height: 100%;
+    background: var(--primary);
+    border-radius: 3px;
+    transition: width 0.3s;
+}
+
+.practice-actions {
+    display: flex;
+    gap: 12px;
+}
+
+/* ==================== 题目卡片 ==================== */
+.question-card {
+    background: var(--surface);
+    border-radius: var(--radius);
+    padding: 32px;
+    box-shadow: var(--shadow);
+    border: 1px solid var(--border);
+    margin-bottom: 24px;
+}
+
+.question-number {
+    font-size: 14px;
+    color: var(--primary);
+    font-weight: 600;
+    margin-bottom: 16px;
+}
+
+.question-content {
+    font-size: 18px;
+    line-height: 1.8;
+    margin-bottom: 24px;
+}
+
+/* ==================== 翻译题型 ==================== */
+.translation-item {
+    margin-bottom: 24px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid var(--border);
+}
+
+.translation-item:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.translation-english {
+    font-size: 16px;
+    line-height: 1.8;
+    margin-bottom: 12px;
+    padding: 16px;
+    background: var(--bg);
+    border-radius: var(--radius-sm);
+    border-left: 4px solid var(--primary);
+}
+
+.translation-chinese {
+    font-size: 15px;
+    line-height: 1.8;
+    color: var(--text-secondary);
+    padding: 16px;
+    background: #f0fdf4;
+    border-radius: var(--radius-sm);
+    border-left: 4px solid var(--success);
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.translation-chinese.masked {
+    background: var(--bg);
+    color: transparent;
+    text-shadow: 0 0 10px rgba(0,0,0,0.3);
+    user-select: none;
+}
+
+.translation-chinese.masked:hover {
+    background: var(--primary-light);
+}
+
+.translation-reveal-hint {
+    font-size: 12px;
+    color: var(--text-secondary);
+    margin-top: 8px;
+    font-style: italic;
+}
+
+/* ==================== 填空题型 ==================== */
+.fillblank-text {
+    font-size: 17px;
+    line-height: 2;
+    margin-bottom: 24px;
+}
+
+.fillblank-blank {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 100px;
+    height: 36px;
+    margin: 0 4px;
+    padding: 0 12px;
+    background: var(--bg);
+    border: 2px solid var(--border);
+    border-radius: var(--radius-sm);
+    font-size: 15px;
+    cursor: pointer;
+    transition: all 0.2s;
+    vertical-align: middle;
+}
+
+.fillblank-blank:hover {
+    border-color: var(--primary);
+}
+
+.fillblank-blank.filled {
+    background: var(--primary-light);
+    border-color: var(--primary);
+    color: var(--primary);
+    font-weight: 600;
+}
+
+.fillblank-blank.correct {
+    background: #dcfce7;
+    border-color: var(--success);
+    color: #166534;
+}
+
+.fillblank-blank.wrong {
+    background: #fee2e2;
+    border-color: var(--danger);
+    color: #991b1b;
+}
+
+.fillblank-options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    padding: 20px;
+    background: var(--bg);
+    border-radius: var(--radius-sm);
+}
+
+.fillblank-option {
+    padding: 10px 20px;
+    background: var(--surface);
+    border: 2px solid var(--border);
+    border-radius: var(--radius-sm);
+    font-size: 15px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.fillblank-option:hover {
+    border-color: var(--primary);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow);
+}
+
+.fillblank-option.used {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* ==================== 同义词题型 ==================== */
+.synonym-study-card {
+    background: var(--bg);
+    border-radius: var(--radius-sm);
+    padding: 20px;
+    margin-bottom: 24px;
+}
+
+.synonym-study-title {
+    font-size: 14px;
+    color: var(--text-secondary);
+    margin-bottom: 12px;
+}
+
+.synonym-pairs-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 12px;
+}
+
+.synonym-pair-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 12px;
+    background: var(--surface);
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--border);
+}
+
+.synonym-word {
+    font-weight: 600;
+    color: var(--primary);
+}
+
+.synonym-arrow {
+    color: var(--text-secondary);
+}
+
+.synonym-exercise {
+    font-size: 17px;
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+.synonym-target {
+    display: inline-block;
+    padding: 4px 12px;
+    background: var(--primary-light);
+    border: 2px solid var(--primary);
+    border-radius: var(--radius-sm);
+    color: var(--primary);
+    font-weight: 600;
+}
+
+.synonym-input-area {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 16px;
+}
+
+.synonym-input-area input {
+    flex: 1;
+    padding: 12px 16px;
+    border: 2px solid var(--border);
+    border-radius: var(--radius-sm);
+    font-size: 16px;
+}
+
+.synonym-input-area input:focus {
+    outline: none;
+    border-color: var(--primary);
+}
+
+.synonym-hint {
+    font-size: 14px;
+    color: var(--text-secondary);
+    font-style: italic;
+}
+
+/* ==================== 结果页面 ==================== */
+.practice-result {
+    text-align: center;
+    padding: 48px;
+}
+
+.result-score {
+    font-size: 72px;
+    font-weight: 800;
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 8px;
+}
+
+.result-label {
+    font-size: 18px;
+    color: var(--text-secondary);
+    margin-bottom: 32px;
+}
+
+.result-stats {
+    display: flex;
+    justify-content: center;
+    gap: 48px;
+    margin-bottom: 32px;
+}
+
+.result-stat {
+    text-align: center;
+}
+
+.result-stat-value {
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--text);
+}
+
+.result-stat-label {
+    font-size: 14px;
+    color: var(--text-secondary);
+}

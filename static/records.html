@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>练习记录 - 英语练习工具</title>
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/records.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app">
+        <!-- 左侧导航 -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <span class="logo-icon">📚</span>
+                    <span class="logo-text">英语练习</span>
+                </div>
+            </div>
+            
+            <nav class="sidebar-nav">
+                <a href="index.html" class="nav-item">
+                    <span class="nav-icon">🏠</span>
+                    <span>首页</span>
+                </a>
+                <a href="banks.html" class="nav-item">
+                    <span class="nav-icon">📁</span>
+                    <span>题库管理</span>
+                </a>
+                <a href="practice.html" class="nav-item">
+                    <span class="nav-icon">✏️</span>
+                    <span>开始练习</span>
+                </a>
+                <a href="records.html" class="nav-item active">
+                    <span class="nav-icon">📊</span>
+                    <span>练习记录</span>
+                </a>
+                <a href="stats.html" class="nav-item">
+                    <span class="nav-icon">📈</span>
+                    <span>学习统计</span>
+                </a>
+            </nav>
+        </aside>
+
+        <!-- 主内容区 -->
+        <main class="main-content">
+            <div class="page-header">
+                <h1>练习记录</h1>
+            </div>
+            
+            <div id="records-list" class="records-list">
+                <!-- 记录列表动态加载 -->
+            </div>
+        </main>
+    </div>
+
+    <!-- 记录详情弹窗 -->
+    <div id="record-detail-modal" class="modal hidden record-detail-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>练习详情</h3>
+                <button class="modal-close" onclick="closeRecordDetail()">×</button>
+            </div>
+            <div class="modal-body" id="record-detail-content">
+                <!-- 详情内容动态加载 -->
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" onclick="closeRecordDetail()">关闭</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/common.js"></script>
+    <script src="js/records.js"></script>
+</body>
+</html>

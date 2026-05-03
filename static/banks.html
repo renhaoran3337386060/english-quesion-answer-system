@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>题库管理 - 英语练习工具</title>
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/banks.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app">
+        <!-- 左侧导航 -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <span class="logo-icon">📚</span>
+                    <span class="logo-text">英语练习</span>
+                </div>
+            </div>
+            
+            <nav class="sidebar-nav">
+                <a href="index.html" class="nav-item">
+                    <span class="nav-icon">🏠</span>
+                    <span>首页</span>
+                </a>
+                <a href="banks.html" class="nav-item active">
+                    <span class="nav-icon">📁</span>
+                    <span>题库管理</span>
+                </a>
+                <a href="practice.html" class="nav-item">
+                    <span class="nav-icon">✏️</span>
+                    <span>开始练习</span>
+                </a>
+                <a href="records.html" class="nav-item">
+                    <span class="nav-icon">📊</span>
+                    <span>练习记录</span>
+                </a>
+                <a href="stats.html" class="nav-item">
+                    <span class="nav-icon">📈</span>
+                    <span>学习统计</span>
+                </a>
+            </nav>
+        </aside>
+
+        <!-- 主内容区 -->
+        <main class="main-content">
+            <div class="page-header">
+                <h1>我的题库</h1>
+                <button class="btn btn-primary" onclick="openBankModal()">
+                    <span>+ 新建题库</span>
+                </button>
+            </div>
+            
+            <div class="filters">
+                <button class="filter-btn active" data-filter="all" onclick="filterBanks('all')">全部</button>
+                <button class="filter-btn" data-filter="translation" onclick="filterBanks('translation')">📝 翻译</button>
+                <button class="filter-btn" data-filter="fillblank" onclick="filterBanks('fillblank')">🔤 填空</button>
+                <button class="filter-btn" data-filter="synonym" onclick="filterBanks('synonym')">🔄 同义词</button>
+            </div>
+            
+            <div id="banks-grid" class="cards-grid">
+                <!-- 题库卡片将在这里渲染 -->
+            </div>
+        </main>
+    </div>
+
+    <!-- 新建题库弹窗 -->
+    <div id="bank-modal" class="modal hidden">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>新建题库</h3>
+                <button class="modal-close" onclick="closeBankModal()">×</button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label>题库名称</label>
+                    <input type="text" id="bank-name" placeholder="输入题库名称">
+                </div>
+                <div class="form-group">
+                    <label>题型</label>
+                    <select id="bank-type">
+                        <option value="translation">📝 文章翻译</option>
+                        <option value="fillblank">🔤 选词填空</option>
+                        <option value="synonym">🔄 同义词替换</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>描述（可选）</label>
+                    <textarea id="bank-desc" placeholder="输入题库描述"></textarea>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" onclick="closeBankModal()">取消</button>
+                <button class="btn btn-primary" onclick="createBank()">创建</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/common.js"></script>
+    <script src="js/banks.js"></script>
+</body>
+</html>

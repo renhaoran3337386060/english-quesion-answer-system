@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>英语练习工具 - 首页</title>
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/home.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app">
+        <!-- 左侧导航 -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <span class="logo-icon">📚</span>
+                    <span class="logo-text">英语练习</span>
+                </div>
+            </div>
+            
+            <nav class="sidebar-nav">
+                <a href="index.html" class="nav-item active">
+                    <span class="nav-icon">🏠</span>
+                    <span>首页</span>
+                </a>
+                <a href="banks.html" class="nav-item">
+                    <span class="nav-icon">📁</span>
+                    <span>题库管理</span>
+                </a>
+                <a href="practice.html" class="nav-item">
+                    <span class="nav-icon">✏️</span>
+                    <span>开始练习</span>
+                </a>
+                <a href="records.html" class="nav-item">
+                    <span class="nav-icon">📊</span>
+                    <span>练习记录</span>
+                </a>
+                <a href="stats.html" class="nav-item">
+                    <span class="nav-icon">📈</span>
+                    <span>学习统计</span>
+                </a>
+            </nav>
+        </aside>
+
+        <!-- 主内容区 -->
+        <main class="main-content">
+            <div class="home-container">
+                <div class="home-header">
+                    <h1>📚 英语练习工具</h1>
+                    <p>提升你的英语能力，从练习开始</p>
+                </div>
+                
+                <div class="feature-cards">
+                    <a href="banks.html" class="feature-card">
+                        <div class="feature-icon">📁</div>
+                        <h3>题库管理</h3>
+                        <p>创建和管理你的专属题库，支持三种题型</p>
+                        <span class="feature-btn">进入 →</span>
+                    </a>
+                    
+                    <a href="practice.html" class="feature-card">
+                        <div class="feature-icon">✏️</div>
+                        <h3>开始练习</h3>
+                        <p>选择题库开始练习，系统自动记录学习进度</p>
+                        <span class="feature-btn">进入 →</span>
+                    </a>
+                    
+                    <a href="records.html" class="feature-card">
+                        <div class="feature-icon">📊</div>
+                        <h3>练习记录</h3>
+                        <p>查看历史练习记录，追踪学习成果</p>
+                        <span class="feature-btn">进入 →</span>
+                    </a>
+                    
+                    <a href="stats.html" class="feature-card">
+                        <div class="feature-icon">📈</div>
+                        <h3>学习统计</h3>
+                        <p>可视化展示学习数据，了解自己的进步</p>
+                        <span class="feature-btn">进入 →</span>
+                    </a>
+                </div>
+                
+                <div class="quick-stats">
+                    <div class="quick-stat-item">
+                        <span class="quick-stat-value" id="quick-total">0</span>
+                        <span class="quick-stat-label">总练习次数</span>
+                    </div>
+                    <div class="quick-stat-item">
+                        <span class="quick-stat-value" id="quick-banks">0</span>
+                        <span class="quick-stat-label">题库数量</span>
+                    </div>
+                    <div class="quick-stat-item">
+                        <span class="quick-stat-value" id="quick-questions">0</span>
+                        <span class="quick-stat-label">题目总数</span>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="js/common.js"></script>
+    <script src="js/home.js"></script>
+</body>
+</html>

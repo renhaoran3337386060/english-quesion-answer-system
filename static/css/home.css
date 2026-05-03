@@ -1,0 +1,135 @@
+/* ==================== 首页样式 ==================== */
+.home-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.home-header {
+    text-align: center;
+    margin-bottom: 48px;
+}
+
+.home-header h1 {
+    font-size: 42px;
+    font-weight: 800;
+    margin-bottom: 12px;
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.home-header p {
+    font-size: 18px;
+    color: var(--text-secondary);
+}
+
+/* ==================== 功能卡片 ==================== */
+.feature-cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+    margin-bottom: 48px;
+}
+
+.feature-card {
+    background: var(--surface);
+    border-radius: var(--radius);
+    padding: 32px;
+    box-shadow: var(--shadow);
+    border: 1px solid var(--border);
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.3s;
+    display: flex;
+    flex-direction: column;
+}
+
+.feature-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--primary);
+}
+
+.feature-icon {
+    font-size: 40px;
+    margin-bottom: 16px;
+}
+
+.feature-card h3 {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: var(--text);
+}
+
+.feature-card p {
+    font-size: 14px;
+    color: var(--text-secondary);
+    flex: 1;
+    margin-bottom: 16px;
+}
+
+.feature-btn {
+    display: inline-flex;
+    align-items: center;
+    color: var(--primary);
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.feature-btn::after {
+    content: '';
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border-top: 4px solid transparent;
+    border-bottom: 4px solid transparent;
+    border-left: 6px solid var(--primary);
+    margin-left: 6px;
+    transition: transform 0.2s;
+}
+
+.feature-card:hover .feature-btn::after {
+    transform: translateX(4px);
+}
+
+/* ==================== 快速统计 ==================== */
+.quick-stats {
+    display: flex;
+    justify-content: center;
+    gap: 48px;
+    padding: 32px;
+    background: var(--surface);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    border: 1px solid var(--border);
+}
+
+.quick-stat-item {
+    text-align: center;
+}
+
+.quick-stat-value {
+    display: block;
+    font-size: 36px;
+    font-weight: 700;
+    color: var(--primary);
+    margin-bottom: 4px;
+}
+
+.quick-stat-label {
+    font-size: 14px;
+    color: var(--text-secondary);
+}
+
+/* ==================== 响应式 ==================== */
+@media (max-width: 768px) {
+    .feature-cards {
+        grid-template-columns: 1fr;
+    }
+    
+    .quick-stats {
+        flex-direction: column;
+        gap: 24px;
+    }
+}
