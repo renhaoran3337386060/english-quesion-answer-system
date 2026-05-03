@@ -56,9 +56,20 @@ jobs:
 
     - name: Accept Android SDK licenses
       run: |
-        cd ~/.buildozer/android/platform/android-sdk/
-        yes | cmdline-tools/latest/bin/sdkmanager --licenses
-        yes | cmdline-tools/latest/bin/sdkmanager "build-tools;34.0.0"
+        SDK_DIR=~/.buildozer/android/platform/android-sdk
+        cd $SDK_DIR
+        # 查找sdkmanager
+        if [ -f "cmdline-tools/latest/bin/sdkmanager" ]; then
+          yes | cmdline-tools/latest/bin/sdkmanager --licenses
+          yes | cmdline-tools/latest/bin/sdkmanager "build-tools;34.0.0"
+        elif [ -f "tools/bin/sdkmanager" ]; then
+          yes | tools/bin/sdkmanager --licenses
+          yes | tools/bin/sdkmanager "build-tools;34.0.0"
+        else
+          echo "sdkmanager not found, listing directory:"
+          ls -la
+          find . -name "sdkmanager" -type f 2>/dev/null || echo "No sdkmanager found"
+        fi
 
     - name: Build with Buildozer
       run: buildozer android debug
