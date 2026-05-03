@@ -46,19 +46,27 @@ jobs:
       run: |
         pip3 install buildozer cython
 
-    - name: Download dependencies
+    - name: Build Android with Buildozer
       run: |
-        # 先运行buildozer下载SDK和NDK
-        buildozer android debug || true
-      timeout-minutes: 30
-      env:
-        JAVA_HOME: /usr/lib/jvm/java-17-openjdk-amd64
-
-    - name: Accept Android SDK licenses
-      uses: SimonMarquis/android-accept-licenses@v1
-
-    - name: Build with Buildozer
-      run: buildozer android debug
+        # 1. 初始化SDK目录（核心修复）
+        buildozer android setup || true
+        
+        # 2. 进入SDK路径
+        cd /home/runner/.buildozer/android/platform/android-sdk/
+        
+        # 3. 接受许可证
+        while true; do echo "y"; sleep 1; done | cmdline-tools/latest/bin/sdkmanager --licenses 2>/dev/null || true
+        
+        # 4. 安装构建工具
+        cmdline-tools/latest/bin/sdkmanager --install "build-tools;34.0.0"
+        
+        # 5. 验证安装
+        ls -la /home/runner/.buildozer/android/platform/android-sdk/build-tools/
+        
+        # 6. 构建
+        cd $GITHUB_WORKSPACE
+        buildozer android clean
+        buildozer android debug
       timeout-minutes: 180
       env:
         JAVA_HOME: /usr/lib/jvm/java-17-openjdk-amd64
