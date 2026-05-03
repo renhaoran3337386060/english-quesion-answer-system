@@ -42,20 +42,24 @@ jobs:
           automake \
           openjdk-17-jdk
 
+    - name: Setup Android SDK
+      uses: android-actions/setup-android@v3
+      with:
+        cmdline-tools-version: 11076708
+        packages: 'platform-tools platforms;android-33 build-tools;33.0.0'
+
+    - name: Accept Android SDK licenses
+      run: |
+        yes | /usr/local/lib/android/sdk/cmdline-tools/latest/bin/sdkmanager --licenses
+
     - name: Install buildozer
       run: |
         pip3 install buildozer cython
 
     - name: Build APK
       run: |
-        # 先运行buildozer下载SDK，然后接受许可证
-        buildozer android debug || true
-        # 接受所有许可证
-        if [ -d ~/.buildozer/android/platform/android-sdk ]; then
-          yes | ~/.buildozer/android/platform/android-sdk/cmdline-tools/*/bin/sdkmanager --licenses || true
-          yes | ~/.buildozer/android/platform/android-sdk/tools/bin/sdkmanager --licenses || true
-        fi
-        # 重新构建
+        export ANDROID_SDK=/usr/local/lib/android/sdk
+        export ANDROID_NDK=/usr/local/lib/android/ndk
         buildozer android debug
       timeout-minutes: 180
       env:
