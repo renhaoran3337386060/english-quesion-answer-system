@@ -46,23 +46,15 @@ jobs:
       run: |
         pip3 install buildozer cython
 
-    - name: Setup Android SDK
-      uses: android-actions/setup-android@v3
-      with:
-        cmdline-tools-version: 11076708
-        packages: 'platform-tools platforms;android-33 build-tools;33.0.0'
-
-    - name: Accept Android SDK licenses
+    - name: Accept licenses and build APK
       run: |
-        yes | /usr/local/lib/android/sdk/cmdline-tools/latest/bin/sdkmanager --licenses || true
-
-    - name: Build APK
-      run: |
-        buildozer android debug
+        mkdir -p ~/.buildozer/android/platform/android-sdk
+        export ANDROID_SDK=~/.buildozer/android/platform/android-sdk
+        yes | buildozer android debug
       timeout-minutes: 180
       env:
         JAVA_HOME: /usr/lib/jvm/java-17-openjdk-amd64
-        ANDROID_SDK: /usr/local/lib/android/sdk
+        ANDROID_SDK_HOME: ~/.buildozer/android/platform/android-sdk
 
     - name: Upload APK
       uses: actions/upload-artifact@v4
