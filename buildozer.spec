@@ -45,6 +45,9 @@ android.minapi = 21
 android.sdk = 33
 android.ndk = 25b
 
+# 固定build-tools版本，避免使用37
+android.buildtools.version = 34.0.0
+
 # Android权限
 android.permissions = INTERNET,WRITE_EXTERNAL_STORAGE,READ_EXTERNAL_STORAGE,ACCESS_NETWORK_STATE
 
