@@ -46,15 +46,20 @@ jobs:
       run: |
         pip3 install buildozer cython
 
-    - name: Accept licenses and build APK
+    - name: Build APK
       run: |
-        mkdir -p ~/.buildozer/android/platform/android-sdk
-        export ANDROID_SDK=~/.buildozer/android/platform/android-sdk
-        yes | buildozer android debug
+        # 先运行buildozer下载SDK，然后接受许可证
+        buildozer android debug || true
+        # 接受所有许可证
+        if [ -d ~/.buildozer/android/platform/android-sdk ]; then
+          yes | ~/.buildozer/android/platform/android-sdk/cmdline-tools/*/bin/sdkmanager --licenses || true
+          yes | ~/.buildozer/android/platform/android-sdk/tools/bin/sdkmanager --licenses || true
+        fi
+        # 重新构建
+        buildozer android debug
       timeout-minutes: 180
       env:
         JAVA_HOME: /usr/lib/jvm/java-17-openjdk-amd64
-        ANDROID_SDK_HOME: ~/.buildozer/android/platform/android-sdk
 
     - name: Upload APK
       uses: actions/upload-artifact@v4
