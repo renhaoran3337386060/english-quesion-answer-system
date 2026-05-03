@@ -51,6 +51,10 @@ android.permissions = INTERNET,WRITE_EXTERNAL_STORAGE,READ_EXTERNAL_STORAGE,ACCE
 # Android架构
 android.archs = arm64-v8a, armeabi-v7a
 
+# Android SDK路径 (GitHub Actions中使用)
+android.sdk_path = ~/.buildozer/android/platform/android-sdk
+android.ndk_path = ~/.buildozer/android/platform/android-ndk-r25b
+
 # 额外的Android参数
 android.add_aars = 
 android.add_jars = 
